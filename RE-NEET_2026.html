@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Examinations Management Platform</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Top Header Area */
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            text-align: center;
+        }
+
+        .header-left {
+            text-align: left;
+            max-width: 320px;
+        }
+
+        .header-left img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .header-center {
+            flex-grow: 1;
+        }
+
+        .header-center h1 {
+            font-size: 22px;
+            color: #000;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 18px;
+            color: #000;
+            margin-bottom: 5px;
+        }
+
+        .header-center h3 {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-end;
+            max-width: 260px;
+        }
+
+        /* Responsive image behavior for header logos */
+        .header-right img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Dark Blue Banner Divider */
+        .blue-banner {
+            background-color: #001f4d;
+            height: 45px;
+            width: 100%;
+        }
+
+        /* Main Content Container */
+        .main-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+
+        /* Login Card */
+        .login-card {
+            width: 100%;
+            max-width: 750px;
+            border: 1px solid #1a73e8;
+            background-color: #fcfcfc;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .card-header {
+            background-color: #0073cc;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .card-body {
+            padding: 40px 60px;
+        }
+
+        /* Form Layout */
+        .form-group {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            font-weight: bold;
+            color: #000;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            max-width: 350px;
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: #f5f5f5;
+            font-size: 14px;
+        }
+
+        /* Captcha specific layout */
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .captcha-box {
+            background-color: #f0fdf4;
+            border: 1px dashed #bbf7d0;
+            padding: 5px 15px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 18px;
+            color: #166534;
+            letter-spacing: 3px;
+            user-select: none;
+        }
+
+        .refresh-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: #166534;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Error Message Styling */
+        .error-message {
+            color: #dc2626;
+            font-size: 13px;
+            margin-bottom: 15px;
+            text-align: center;
+            display: none;
+            font-weight: bold;
+        }
+
+        /* Action Row */
+        .action-row {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .submit-btn {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 8px 60px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .submit-btn:hover {
+            background-color: #0052a3;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #001f4d;
+            color: #ffffff;
+            padding: 15px 20px;
+            font-size: 11px;
+            line-height: 1.6;
+            text-align: left;
+            border-top: 1px solid #002d6b;
+        }
+    </style></head><body>
+
+    <header class="header-top">
+        <div class="header-left">
+            <img src="government.png" alt="Government of India, Ministry of Education, Department of Higher Education">
+        </div>
+        <div class="header-center">
+            <h1>Public Examinations Management Platform</h1>
+            <h2>RE-NEET (UG) - 2026</h2>
+            <h3>Score Card</h3>
+        </div>
+        <div class="header-right">
+            <img src="idkp1gmf7r_logos.png" alt="National Testing Agency Logo">
+            <img src="Screenshot 2026-07-07 221504.png" alt="National Medical Commission Logo">
+        </div>
+    </header>
+
+    <div class="blue-banner"></div>
+
+    <main class="main-container">
+        <div class="login-card">
+            <div class="card-header">
+                Login Through Application Number & Password
+            </div>
+            <div class="card-body">
+                
+                <div id="errorBox" class="error-message">Invalid Application Number, Password, or CAPTCHA.</div>
+
+                <form id="loginForm">
+                    
+                    <div class="form-group">
+                        <label for="appNo">Application No :</label>
+                        <input type="text" id="appNo" required autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password :</label>
+                        <input type="password" id="password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="captchaInput">Enter CAPTCHA :</label>
+                        <input type="text" id="captchaInput" required autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label>CAPTCHA :</label>
+                        <div class="captcha-container">
+                            <div class="captcha-box" id="captchaValue">5A63X4</div>
+                            <button type="button" class="refresh-btn" title="Refresh Captcha">🔄</button>
+                        </div>
+                    </div>
+
+                    <div class="action-row">
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Platform has been developed by NIC as per the requirements and rules of the concerned Public Examination Authorities (PEA). It works as per the requirements, rules, policies of the concerned user PEA. The data and processes are owned and managed by the concerned PEA. (Ver 1.0.68.2.0)
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop page from reloading
+
+            // Get entered values
+            const enteredAppNo = document.getElementById('appNo').value.trim();
+            const enteredPassword = document.getElementById('password').value;
+            const enteredCaptcha = document.getElementById('captchaInput').value.trim();
+            
+            // Get current required values
+            const correctAppNo = "260411435983";
+            const correctPassword = "Tushar@123";
+            const correctCaptcha = document.getElementById('captchaValue').textContent.trim();
+            
+            const errorBox = document.getElementById('errorBox');
+
+            // Validate fields case-sensitively
+            if (enteredAppNo === correctAppNo && enteredPassword === correctPassword && enteredCaptcha.toUpperCase() === correctCaptcha.toUpperCase()) {
+                errorBox.style.display = "none";
+                
+                // Redirects directly to the uploaded PDF document smoothly
+                window.location.href = "RE-NEET 2026.pdf";
+            } else {
+                errorBox.style.display = "block";
+            }
+        });
+    </script></body></html>
